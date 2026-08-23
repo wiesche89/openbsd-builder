@@ -2,4 +2,4 @@
 
 set -exu
 
-# Add your additional provisioning here for custom VM images.
+pkg_add rust git cmake gmake
