@@ -1,3 +1,12 @@
+packer {
+  required_plugins {
+    qemu = {
+      source  = "github.com/hashicorp/qemu"
+      version = "~> 1.1.6"
+    }
+  }
+}
+
 variable "os_version" {
   type = string
   description = "The version of the operating system to download and install"
@@ -170,9 +179,7 @@ source "qemu" "qemu" {
   qemuargs = [
     ["-cpu", var.cpu_type],
     ["-boot", "strict=off"],
-    ["-accel", "hvf"],
-    ["-accel", "kvm"],
-    ["-accel", "tcg"],
+    ["-accel", var.accelerator],
     ["-monitor", "none"],
     ["-vga", "cirrus"],
     ["-device", "virtio-blk-pci,drive=drive0,bootindex=0"],

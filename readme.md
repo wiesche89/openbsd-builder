@@ -21,6 +21,13 @@ In addition to the above file sets, the following packages are installed as well
 * bash
 * curl
 * rsync
+* rust
+* git
+* cmake
+* pkg-config
+* gmake
+
+The x86-64 image uses a 24 GB disk for Grin CI builds.
 
 Except for the root user, there's one additional user, `runner`, which is the
 user that will be running the commands in the GitHub action. This user is
